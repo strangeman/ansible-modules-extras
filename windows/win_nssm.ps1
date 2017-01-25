@@ -254,6 +254,7 @@ Function Nssm-Update-AppParameters
 
     if ($results -ne $singleLineParams)
     {
+        Set-Attr $result "old_nssm_single_line_app_parameters" $results
         if ($appParameters)
         {
             $cmd = "set ""$name"" AppParameters $singleLineParams"
